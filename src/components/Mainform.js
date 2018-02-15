@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
 import Login from '../login'
 
@@ -67,6 +66,14 @@ const Item = styled.div`
     }
     .option{
         padding-top : 10px;
+    }
+    a{
+        color:#4c7ab4;
+        text-decoration:none;
+    }
+    a:visited{
+        color:#4c7ab4;
+        text-decoration:none;
     }
 
 `;
@@ -166,7 +173,7 @@ class Privacy extends Component{
                         <div class="memo">Manage who can see your activity, things you fancy, your follower, people you follow or in anyone's search results.</div>
                         <div class="option">
                             <span class="label"><input type="radio" id="everyone" name="privacy" checked={this.props.visibility===0} onChange={() => this.props.handleVisibility(0)}/><label for="everyone">Everyone</label></span>
-                            <span class="label"><input type="radio" id="private" name="privacy" checked={this.props.visibility===1} onChange={() => this.props.handleVisibility(1)}/><label for="private">Private</label></span>
+                            <span class="label"><input type="radio" id="private" name="privacy" checked={this.props.visibility===1} onChange={() => this.props.handleVisibility(1)}/><label for="private"><i class="fas fa-lock"></i> Private</label></span>
                         </div>
                     </Item>
                     <Item>
@@ -175,7 +182,7 @@ class Privacy extends Component{
                         <div class="option">
                             <span class="label"><input type="radio" id="everyone_m" name="messages" checked={this.props.message===0} onChange={() => this.props.handleMessage(0)}/><label for="everyone_m">Everyone</label></span>
                             <span class="label"><input type="radio" id="follow" name="messages" checked={this.props.message===1} onChange={() => this.props.handleMessage(1)}/><label for="follow">People you follow</label></span>
-                            <span class="label"><input type="radio" id="noone" name="messages" checked={this.props.message===2} onChange={() => this.props.handleMessage(2)}/><label for="noone">No one</label></span>
+                            <span class="label"><input type="radio" id="noone" name="messages" checked={this.props.message===2} onChange={() => this.props.handleMessage(2)}/><label for="noone"><i class="fas fa-lock"></i> No one</label></span>
                         </div>
                     </Item>
                     <Item>
